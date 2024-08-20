@@ -1,28 +1,30 @@
 package tads.lista;
 
 public interface ILista<T>{
-    // Insertar al incio de la lista
-    public void insertAtBegining(T elemento);
 
-    public void insertAtEnd(T elemento);
+    // Insertar al inicio de la lista
+    void insertarAlInicio(T elemento);
 
-    // Devuelve true si existe el elemnto
-    public boolean exists(T elemento);
 
-    public T retrieve(T dato);
+    void insertarAlFinal(T elemento);
 
-    public T retrieve(int indice);
+    // Devuelve true si existe el elemento
+    boolean existe(T elemento);
 
-    public int getLength();
+    T devolver(T dato);
 
-    public void delete(T elemento);
+    T devolver(int indice);
 
-    public void delete(int indice);
+    int largo();
 
-    public void printList();
+    void borrar(T elemento);
 
-    public void printListRec();
+    void borrar(int indice);
+
+    void mostrar();
+
+    void mostrarRec();
 
     // Override
-    public String toString();
+    String toString();
 }
