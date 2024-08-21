@@ -25,6 +25,7 @@ public interface ILista<T>{
 
     void mostrarRec();
 
+    boolean esVacia();
     // Override
     String toString();
 }

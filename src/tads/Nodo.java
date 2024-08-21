@@ -1,40 +1,40 @@
 package tads;
 
 public class Nodo <T>{
-    private T value;
-    private Nodo<T> next;
+    private T dato;
+    private Nodo<T> siguiente;
 
     // ---------------------------------------------------------------------- Getters and setters
-    public T getValue() {
-        return value;
+    public T getDato() {
+        return dato;
     }
 
-    public void setValue(T value) {
-        this.value = value;
+    public void setDato(T dato) {
+        this.dato = dato;
     }
 
-    public Nodo<T> getNext() {
-        return next;
+    public Nodo<T> getSiguiente() {
+        return siguiente;
     }
 
-    public void setNext(Nodo<T> next) {
-        this.next = next;
+    public void setSiguiente(Nodo<T> siguiente) {
+        this.siguiente = siguiente;
     }
 
     // ---------------------------------------------------------------------- Constructors
     public Nodo(T value){
-        this.value = value;
-        this.next = null;
+        this.dato = value;
+        this.siguiente = null;
     }
 
     public Nodo(T value, Nodo<T> next){
-        this.value = value;
-        this.next = next;
+        this.dato = value;
+        this.siguiente = next;
     }
 
     // ---------------------------------------------------------------------- Override Methods
     @Override
     public String toString() {
-        return value.toString();
+        return dato.toString();
     }
 }
