@@ -184,7 +184,27 @@ public class Lista<T> implements ILista<T>  {
 
     @Override
     public void borrar(int indice) {
-        //TODO: Implement function
+        if(esVacia()){
+            return;
+        }
+
+        int i = 0;
+        Nodo<T> pos = this.inicio;
+
+        while(i < indice - 1 && pos.getSiguiente() != null) {
+            i ++;
+            pos = pos.getSiguiente();
+        }
+
+        if(pos.getSiguiente() != null){
+            Nodo<T> a_borrar = pos.getSiguiente();
+            pos.setSiguiente(a_borrar.getSiguiente());
+            if(this.fin == a_borrar){
+                this.fin = pos;
+            }
+            a_borrar.setSiguiente(null);
+            this.cantidad--;
+        }
     }
 
     @Override
