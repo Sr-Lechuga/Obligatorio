@@ -1,5 +1,7 @@
 package tads.arbol;
 
+import tads.NodoAB;
+
 public interface IArbolBinario<T> {
 
     int cantidadNodos();
@@ -8,9 +10,12 @@ public interface IArbolBinario<T> {
 
     int altura();
 
-    boolean estaBalanceado();
+    boolean equilibrado();
 
-    boolean sonIguales(ArbolBinario otroArbol);
+    boolean Iguales(ArbolBinario<T> otroArbol);
 
     boolean pertenece(T dato);
+
+    boolean todosPares(NodoAB<T> raiz);
+
 }

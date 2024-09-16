@@ -3,7 +3,7 @@ package tads.arbol;
 import tads.NodoAB;
 
 public class ArbolBinario<T> implements IArbolBinario<T>{
-    private final NodoAB<T> raiz;
+    private NodoAB<T> raiz;
 
     public ArbolBinario(NodoAB<T> raiz) {
         this.raiz = raiz;
@@ -60,28 +60,64 @@ public class ArbolBinario<T> implements IArbolBinario<T>{
     }
 
     /**
+     * @param nodo
      * @return
      */
     @Override
-    public boolean estaBalanceado() {
-        return estaBalanceadoRec(this.raiz);
+    public boolean todosPares(NodoAB nodo) {
+        return todosParesRec(nodo);
     }
 
-    private boolean estaBalanceadoRec(NodoAB<T> nodo){
-        if (nodo != null){
-            boolean nodoEstaBalanceado = this.alturaRec(nodo.getIzq()) - this.alturaRec(nodo.getDer()) <= 1;
-            return estaBalanceadoRec(nodo.getIzq()) && estaBalanceadoRec(nodo.getDer())  && nodoEstaBalanceado;
+    private boolean todosParesRec(NodoAB raiz){
+        if(raiz == null){
+            return true;
+        }else{
+            if((int)raiz.getDato() % 2 != 0){
+                return false;
+            }else{
+                return(todosParesRec(raiz.getDer()) && todosParesRec(raiz.getIzq()));
+            }
         }
-        return true;
+
     }
+
 
     /**
      * @param otroArbol
      * @return
      */
     @Override
-    public boolean sonIguales(ArbolBinario otroArbol) {
-        return false;
+    public boolean Iguales(ArbolBinario<T> otroArbol) {
+        if (otroArbol == null)
+            return false;
+        else
+            return igualesRec(this.raiz,otroArbol.raiz);
+    }
+
+    private boolean igualesRec(NodoAB<T> nodo, NodoAB<T> otroNodo){
+        if(nodo != null && otroNodo != null){
+            return nodo.getDato() == otroNodo.getDato()
+                    && igualesRec(nodo.getIzq(),otroNodo.getIzq())
+                    && igualesRec(nodo.getDer(),otroNodo.getDer());
+        }else{
+            return nodo == null && otroNodo == null;
+        }
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public boolean equilibrado() {
+        return equilibradoRec(this.raiz);
+    }
+
+    private boolean equilibradoRec(NodoAB<T> nodo){
+        if (nodo != null){
+            boolean nodoEstaBalanceado = this.alturaRec(nodo.getIzq()) - this.alturaRec(nodo.getDer()) <= 1;
+            return equilibradoRec(nodo.getIzq()) && equilibradoRec(nodo.getDer())  && nodoEstaBalanceado;
+        }
+        return true;
     }
 
     /**
@@ -89,7 +125,33 @@ public class ArbolBinario<T> implements IArbolBinario<T>{
      * @return
      */
     @Override
-    public boolean pertenece(Object dato) {
+    public boolean pertenece(T dato) {
+        return perteneceRec(this.raiz, dato);
+    }
+
+    private boolean perteneceRec(NodoAB<T> nodo, T dato){
+        if(nodo != null){
+            return nodo.getDato().equals(dato) || perteneceRec(nodo.getIzq(), dato) || perteneceRec(nodo.getDer(), dato);
+        }
         return false;
+    }
+
+    public ArbolBinario<T> clon(){
+        ArbolBinario<T> nuevoArbol = new ArbolBinario<>(new NodoAB<>(this.raiz.getDato()));
+        clonRec(this.raiz,nuevoArbol.raiz);
+        return nuevoArbol;
+    }
+
+    private void clonRec(NodoAB<T> nodo, NodoAB<T> copia){
+        if(nodo != null){
+            if(nodo.getIzq() != null){
+                copia.setIzq(new NodoAB<>(nodo.getIzq().getDato()));
+                clonRec(nodo.getIzq(),copia);
+            } else if (nodo.getDer() != null) {
+                copia.setDer(new NodoAB<>(nodo.getDer().getDato()));
+                clonRec(nodo.getDer(),copia);
+            }
+            //Else, nodo es una hoja, nada que hacer
+        }
     }
 }

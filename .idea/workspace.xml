@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a9fbb5-cab9-4076-99b5-35b359d58e93" name="Changes" comment="Update: metodos de pila">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tads/NodoAB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tads/arbol/ArbolBinario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tads/arbol/IArbolBinario.java" afterDir="false" />
+    <list default="true" id="65a9fbb5-cab9-4076-99b5-35b359d58e93" name="Changes" comment="Update: metodos de arbol binario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tads/arbol/ArbolBinario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tads/arbol/ArbolBinario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tads/arbol/IArbolBinario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tads/arbol/IArbolBinario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +58,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jlima/Downloads/clase sem3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,7 +87,11 @@
       <updated>1724115841357</updated>
       <workItem from="1724115842504" duration="2498000" />
       <workItem from="1724209973906" duration="3571000" />
-      <workItem from="1724712577050" duration="6589000" />
+      <workItem from="1724712577050" duration="7507000" />
+      <workItem from="1725318089958" duration="5884000" />
+      <workItem from="1725408810379" duration="391000" />
+      <workItem from="1725580739329" duration="6000" />
+      <workItem from="1725921837657" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -130,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724715888819</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update: metodos de arbol binario">
+      <option name="closed" value="true" />
+      <created>1724722196463</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724722196464</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +163,8 @@
     <MESSAGE value="Update: Typo corrections" />
     <MESSAGE value="Update: starter List functions" />
     <MESSAGE value="Update: metodos de pila" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update: metodos de pila" />
+    <MESSAGE value="Update: metodos de arbol binario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update: metodos de arbol binario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
